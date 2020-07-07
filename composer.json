@@ -1,0 +1,50 @@
+{
+    "name": "andrey-helldar/laravel-ide-facades-helper",
+    "description": "Laravel IDE Facade Helper, generates correct PHPDocs for your Facade classes, to improve auto-completion.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["laravel", "autocomplete", "ide", "helper", "phpstorm", "netbeans", "sublime", "codeintel", "phpdoc"],
+    "support": {
+        "issues": "https://github.com/andrey-helldar/laravel-ide-facades-helper/issues",
+        "source": "https://github.com/andrey-helldar/laravel-ide-facades-helper"
+    },
+    "authors": [
+        {
+            "name": "Andrey Helldar",
+            "email": "helldar@ai-rus.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "doctrine/annotations": "^1.10",
+        "illuminate/console": "^7.0",
+        "illuminate/container": "^7.0",
+        "illuminate/contracts": "^7.0",
+        "illuminate/support": "^7.0",
+        "symfony/finder": "^5.0"
+    },
+    "require-dev": {
+        "composer/composer": "^1.10"
+    },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ],
+        "psr-4": {
+            "Helldar\\LaravelIdeFacadesHelper\\": "src"
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Helldar\\LaravelIdeFacadesHelper\\ServiceProvider"
+            ]
+        }
+    }
+}
