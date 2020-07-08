@@ -32,13 +32,7 @@ final class Method
             $type = $this->getReturnTypeFromDocBlock();
         }
 
-        if ($type === 'self' || $type === 'static') {
-            return $this->method->class . ' ';
-        }
-
-        return class_exists($type) || interface_exists($type)
-            ? Str::start($type, '\\')
-            : $type;
+        return $this->castClassname($type);
     }
 
     public function getName(): string
@@ -97,6 +91,17 @@ final class Method
         }
 
         return "'" . trim($value) . "'";
+    }
+
+    protected function castClassname(string $value): string
+    {
+        if ($value === 'self' || $value === 'static') {
+            return Str::start($this->method->class, '\\');
+        }
+
+        return class_exists($value) || interface_exists($value)
+            ? Str::start($value, '\\')
+            : $value;
     }
 
     protected function getReturnTypeFromDocBlock(): ?string
