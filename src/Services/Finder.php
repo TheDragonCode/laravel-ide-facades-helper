@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 
 final class Finder extends BaseService
 {
-    /** @var \Facade\Ignition\Support\ComposerClassMap */
+    /** @var \Helldar\LaravelIdeFacadesHelper\Services\ComposerClassMap */
     protected $composer;
 
     /** @var array */
@@ -32,7 +32,7 @@ final class Finder extends BaseService
 
     public function get()
     {
-        return array_keys($this->filter());
+        return array_keys(array_unique($this->filter()));
     }
 
     protected function filter(): array

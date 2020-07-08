@@ -50,7 +50,7 @@ final class Generate extends Command
     {
         $this->processor
             ->items($this->finder->get())
-            ->run();
+            ->store();
     }
 
     protected function directories(): array

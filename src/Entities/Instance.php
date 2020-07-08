@@ -2,58 +2,83 @@
 
 namespace Helldar\LaravelIdeFacadesHelper\Entities;
 
+use Helldar\LaravelIdeFacadesHelper\Traits\Containable;
+use Helldar\LaravelIdeFacadesHelper\Traits\Makeable;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Str;
 use ReflectionClass;
-use ReflectionProperty;
+use ReflectionMethod;
 
 final class Instance
 {
-    public $classname;
+    use Makeable;
+    use Containable;
 
-    protected $reflection;
+    /** @var \Illuminate\Support\Facades\Facade */
+    protected $facade;
 
-    /**
-     * Instance constructor.
-     *
-     * @param  string  $classname
-     *
-     * @throws \ReflectionException
-     */
-    public function __construct(string $classname)
+    protected $instance;
+
+    public function __construct($facade)
     {
-        $this->classname = $classname;
-
-        $this->reflection = new ReflectionClass($classname);
+        $this->facade   = $facade;
+        $this->instance = $this->resolve($facade);
     }
 
     /**
-     * @return array|\ReflectionProperty[]
+     * @throws \ReflectionException
+     *
+     * @return \Helldar\LaravelIdeFacadesHelper\Entities\Method[]
      */
-    public function properties(): array
+    public function methods(): array
     {
-        return $this->reflection->getProperties(
-            ReflectionProperty::IS_PUBLIC
+        return array_values(array_map(static function (ReflectionMethod $method) {
+            return Method::make($method);
+        }, $this->getFilteredMethods()));
+    }
+
+    public function getNamespace(): string
+    {
+        return (string) Str::of($this->facade)
+            ->beforeLast('\\');
+    }
+
+    public function getClassname(): string
+    {
+        return class_basename($this->facade);
+    }
+
+    /**
+     * @throws \ReflectionException
+     *
+     * @return array
+     */
+    protected function getFilteredMethods(): array
+    {
+        return $this->reflect()->getMethods(
+            $this->methodsVisibility()
         );
     }
 
     /**
-     * @return array|\ReflectionMethod[]
+     * @throws \ReflectionException
+     *
+     * @return \ReflectionClass
      */
-    public function methods(): array
+    protected function reflect(): ReflectionClass
     {
-        return array_values(array_filter($this->reflection->getMethods(), function ($method) {
-            return ! in_array($method->getName(), [
-                'resolved',
-                'spy',
-                'partialMock',
-                'shouldReceive',
-                'swap',
-                'getFacadeRoot',
-                'clearResolvedInstance',
-                'clearResolvedInstances',
-                'getFacadeApplication',
-                'setFacadeApplication',
-                '__callStatic',
-            ]);
-        }));
+        return new ReflectionClass($this->instance);
+    }
+
+    protected function resolve($class)
+    {
+        $obj = $class::getFacadeRoot();
+
+        return new $obj();
+    }
+
+    protected function methodsVisibility(): int
+    {
+        return Config::get('ide-helper.facades_visibility', ReflectionMethod::IS_PUBLIC);
     }
 }

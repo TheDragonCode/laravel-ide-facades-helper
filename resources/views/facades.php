@@ -12,15 +12,21 @@
  * @see https://github.com/andrey-helldar/laravel-ide-facades-helper
  */
 
-<?php /** @var \Helldar\LaravelIdeFacadesHelper\Entities\Instance[] $items */ ?>
+<?php /** @var array $items */ ?>
+<?php /** @var \Helldar\LaravelIdeFacadesHelper\Entities\Instance[] $classes */ ?>
 
-<?php foreach ($items as $item): ?>
-/**
-<?php foreach ($item->properties() as $property): ?>
-* @param {{ $property->getDeclaringClass() }} {{ $property->getName() }}
-<?php endforeach; ?>
+<?php foreach ($items as $namespace => $classes): ?>
+namespace <?= $namespace ?>
+{
+<?php foreach ($classes as $item): ?>
+
+    /**
 <?php foreach ($item->methods() as $method): ?>
-* @method static {{ $method->getDeclaringClass() }} <?= $method->getName() ?>(<?= implode(', ', $method->getParameters()) ?>)
+     * @method static <?= $method->getType() ?> <?= $method->getName() ?>(<?= implode(', ', $method->getParameters()) ?>)
 <?php endforeach; ?>
-
+     */
+    class <?= $item->getClassname() ?> extends \Illuminate\Support\Facades\Facade {
+    }
+<?php endforeach; ?>
+}
 <?php endforeach; ?>

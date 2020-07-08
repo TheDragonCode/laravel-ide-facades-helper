@@ -29,4 +29,15 @@ return [
     'facade_locations' => [
         'app\Facades',
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Method visibility types to include
+    |--------------------------------------------------------------------------
+    |
+    | Determines what types of methods will be generated.
+    |
+    */
+
+    'facades_visibility' => ReflectionMethod::IS_PUBLIC,
 ];

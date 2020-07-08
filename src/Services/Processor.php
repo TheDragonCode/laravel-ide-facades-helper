@@ -4,6 +4,7 @@ namespace Helldar\LaravelIdeFacadesHelper\Services;
 
 use Helldar\LaravelIdeFacadesHelper\Entities\Instance;
 use Helldar\LaravelIdeFacadesHelper\Traits\Containable;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Config;
 
 final class Processor extends BaseService
@@ -15,9 +16,11 @@ final class Processor extends BaseService
 
     public function items(array $items): self
     {
-        $this->items = array_map(static function ($class) {
-            return new Instance($class);
-        }, $items);
+        foreach ($items as $item) {
+            $this->addItem(
+                Instance::make($item)
+            );
+        }
 
         return $this;
     }
@@ -25,7 +28,7 @@ final class Processor extends BaseService
     /**
      * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */
-    public function run()
+    public function store()
     {
         file_put_contents(
             $this->storePath(),
@@ -60,5 +63,21 @@ final class Processor extends BaseService
     protected function resolve(string $classname)
     {
         return $classname::getFacadeRoot();
+    }
+
+    protected function addItem(Instance $instance): void
+    {
+        $namespace = $instance->getNamespace();
+
+        $this->makeItemsNamespace($namespace);
+
+        $this->items[$namespace][] = $instance;
+    }
+
+    protected function makeItemsNamespace(string $namespace): void
+    {
+        if (! Arr::has($this->items, $namespace)) {
+            Arr::set($this->items, $namespace, []);
+        }
     }
 }
