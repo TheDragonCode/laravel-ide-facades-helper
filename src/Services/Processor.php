@@ -36,18 +36,26 @@ final class Processor extends BaseService
         );
     }
 
+    public function filename(): string
+    {
+        return sprintf('%s_facades.%s', $this->filePrefix(), $this->extension());
+    }
+
+    protected function filePrefix(): string
+    {
+        return Config::get('ide-helper.filename');
+    }
+
+    /**
+     * @throws \Illuminate\Contracts\Container\BindingResolutionException
+     *
+     * @return string
+     */
     protected function storePath(): string
     {
         return $this->app()->basePath(
-            $this->filename() .
-            '_facades.' .
-            $this->extension()
+            $this->filename()
         );
-    }
-
-    protected function filename(): string
-    {
-        return Config::get('ide-helper.filename');
     }
 
     protected function extension(): string

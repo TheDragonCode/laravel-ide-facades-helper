@@ -35,6 +35,7 @@ final class Generate extends Command
 
         $this->prepare();
         $this->generate();
+        $this->showMessage();
     }
 
     protected function prepare()
@@ -56,5 +57,15 @@ final class Generate extends Command
     protected function directories(): array
     {
         return Config::get('ide-helper.facade_locations', ['app']);
+    }
+
+    protected function showMessage(): void
+    {
+        $this->info('Facades information was written to ' . $this->filename());
+    }
+
+    protected function filename(): string
+    {
+        return $this->processor->filename();
     }
 }
