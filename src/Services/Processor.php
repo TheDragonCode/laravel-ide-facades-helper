@@ -56,7 +56,7 @@ final class Processor extends BaseService
     }
 
     /**
-     * @param  string|\Illuminate\Support\Facades\Facade  $classname
+     * @param  \Illuminate\Support\Facades\Facade|string  $classname
      *
      * @return \stdClass
      */
