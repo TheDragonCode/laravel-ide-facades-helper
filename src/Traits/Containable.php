@@ -16,7 +16,7 @@ trait Containable
      *
      * @throws \Illuminate\Contracts\Container\BindingResolutionException
      *
-     * @return mixed|\Illuminate\Contracts\Foundation\Application
+     * @return \Illuminate\Contracts\Foundation\Application|mixed
      */
     protected function app($abstract = null, array $parameters = []): Application
     {
