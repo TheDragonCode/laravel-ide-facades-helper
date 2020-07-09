@@ -16,7 +16,6 @@ Laravel IDE Facade Helper, generates correct PHPDocs for your Facade classes, to
 ## Content
 * [Installation](#installation)
 * [Usage](#usage)
-    * [Processes Rotation](#processes-rotation)
 * [Credits](#credits)
 
 
