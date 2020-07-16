@@ -93,7 +93,7 @@ final class Method
         return "'" . trim($value) . "'";
     }
 
-    protected function castClassname(string $value): string
+    protected function castClassname(string $value = null): ?string
     {
         if ($value === 'self' || $value === 'static') {
             return Str::start($this->method->class, '\\');
