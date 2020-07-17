@@ -39,6 +39,7 @@ namespace <?= $namespace ?>
          *
 <?php endif; ?>
          * @return <?= $method->getType() ?>
+
          * @static
          */
         public static function <?= $method->getName() ?>(<?= $method->join(true) ?>)
