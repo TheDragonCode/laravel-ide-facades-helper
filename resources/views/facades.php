@@ -20,12 +20,33 @@ namespace <?= $namespace ?>
 {
 <?php foreach ($classes as $item): ?>
 
-    /**
+    class <?= $item->getFacadeBasename() ?>
+
+    {
 <?php foreach ($item->methods() as $method): ?>
-     * @method static <?= $method->getType() ?> <?= $method->getName() ?>(<?= implode(', ', $method->getParameters()) ?>)
+
+        /**
+<?php if ($desctiption = $method->getDescription()): ?>
+         * <?= $desctiption ?>
+
+         *
+<?php endif; ?>
+<?php if ($parameters = $method->parameters()): ?>
+<?php foreach ($parameters as $parameter): ?>
+         * @param <?= $parameter->getType(true) ?> $<?= $parameter->getName() ?>
+
 <?php endforeach; ?>
-     */
-    class <?= $item->getClassname() ?> extends \Illuminate\Support\Facades\Facade {
+         *
+<?php endif; ?>
+         * @return string
+         * @static
+         */
+        public static function <?= $method->getName() ?>(<?= $method->join(true) ?>)
+        {
+            /** @var \<?= $item->getInstanceClassname() ?> $instance */
+            return $instance-><?= $method->getName() ?>(<?= $method->join() ?>);
+        }
+<?php endforeach; ?>
     }
 <?php endforeach; ?>
 }
