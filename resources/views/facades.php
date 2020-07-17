@@ -38,7 +38,7 @@ namespace <?= $namespace ?>
 <?php endforeach; ?>
          *
 <?php endif; ?>
-         * @return string
+         * @return <?= $method->getType() ?>
          * @static
          */
         public static function <?= $method->getName() ?>(<?= $method->join(true) ?>)
