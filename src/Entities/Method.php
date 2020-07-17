@@ -2,7 +2,7 @@
 
 namespace Helldar\LaravelIdeFacadesHelper\Entities;
 
-use Barryvdh\Reflection\DocBlock;
+use Helldar\LaravelIdeFacadesHelper\Services\DocBlock;
 use Helldar\LaravelIdeFacadesHelper\Traits\Makeable;
 use Illuminate\Support\Str;
 use ReflectionMethod;
@@ -15,9 +15,14 @@ final class Method
 
     protected $method;
 
+    /** @var \Helldar\LaravelIdeFacadesHelper\Services\DocBlock */
+    protected $doc;
+
     public function __construct(ReflectionMethod $method)
     {
         $this->method = $method;
+
+        $this->doc = $this->getDocBlock($method);
     }
 
     public function getType(): ?string
@@ -29,16 +34,10 @@ final class Method
                 ? $return_type->getName()
                 : (string) $return_type;
         } else {
-            $type = $this->getReturnTypeFromDocBlock();
+            $type = $this->doc->getReturnType();
         }
 
-        if ($type === 'self' || $type === 'static') {
-            return $this->method->class . ' ';
-        }
-
-        return class_exists($type) || interface_exists($type)
-            ? Str::start($type, '\\')
-            : $type;
+        return $this->castClassname($type);
     }
 
     public function getName(): string
@@ -46,65 +45,64 @@ final class Method
         return $this->method->getName();
     }
 
-    public function getParameters()
+    public function getDescription(): ?string
+    {
+        return $this->doc->getSummary();
+    }
+
+    /**
+     * @return \Helldar\LaravelIdeFacadesHelper\Entities\Parameter[]
+     */
+    public function parameters()
+    {
+        return array_map(function (ReflectionParameter $parameter) {
+            return Parameter::make($parameter, $this->doc);
+        }, $this->getParameters());
+    }
+
+    public function join(bool $with_types = false): ?string
     {
         $params = [];
 
-        foreach ($this->method->getParameters() as $parameter) {
-            $str = $this->castParameterType($parameter) . '$' . $parameter->getName();
+        foreach ($this->parameters() as $parameter) {
+            if (! $with_types) {
+                $params[] = '$' . $parameter->getName();
+
+                continue;
+            }
+
+            $str = $parameter->getType() . '$' . $parameter->getName();
 
             if ($parameter->isOptional() && $parameter->isDefaultValueAvailable()) {
-                $default = $this->castParameterValue($parameter->getDefaultValue());
-
-                $str .= " = $default";
+                $str .= ' = ' . $parameter->getValue();
             }
 
             $params[] = $str;
         }
 
-        return $params;
+        return implode(', ', $params);
     }
 
-    protected function castParameterType(ReflectionParameter $parameter): string
+    protected function castClassname(string $value = null): ?string
     {
-        if ($class = $parameter->getClass()) {
-            return Str::start($class->getName(), '\\') . ' ';
+        if ($value === 'self' || $value === 'static') {
+            return Str::start($this->method->class, '\\');
         }
 
-        if ($type = $parameter->getType()) {
-            return $type->getName() . ' ';
-        }
-
-        return '';
+        return class_exists($value) || interface_exists($value)
+            ? Str::start($value, '\\')
+            : $value;
     }
 
-    protected function castParameterValue($value): string
+    protected function getParameters()
     {
-        if (is_bool($value)) {
-            return $value ? 'true' : 'false';
-        }
-
-        if (is_array($value)) {
-            return '[]';
-        }
-
-        if (is_null($value)) {
-            return 'null';
-        }
-
-        if (is_numeric($value)) {
-            return $value;
-        }
-
-        return "'" . trim($value) . "'";
+        return $this->method->getParameters();
     }
 
-    protected function getReturnTypeFromDocBlock(): ?string
+    protected function getDocBlock(ReflectionMethod $method): DocBlock
     {
-        $doc = new DocBlock($this->method);
-
-        return $doc->hasTag('return')
-            ? $doc->getTagsByName('return')[0]->getType()
-            : null;
+        return DocBlock::make(
+            $method->getDocComment() ?: null
+        );
     }
 }

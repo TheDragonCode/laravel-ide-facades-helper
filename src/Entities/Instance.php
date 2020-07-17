@@ -43,9 +43,14 @@ final class Instance
             ->beforeLast('\\');
     }
 
-    public function getClassname(): string
+    public function getFacadeBasename(): string
     {
         return class_basename($this->facade);
+    }
+
+    public function getInstanceClassname(): string
+    {
+        return get_class($this->instance);
     }
 
     /**

@@ -16,7 +16,7 @@
     ],
     "require": {
         "php": "^7.2",
-        "barryvdh/reflection-docblock": "^2.0",
+        "phpdocumentor/reflection-docblock": "^5.1",
         "illuminate/console": "^7.0",
         "illuminate/container": "^7.0",
         "illuminate/contracts": "^7.0",
