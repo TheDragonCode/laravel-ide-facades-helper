@@ -1,6 +1,8 @@
 /vendor/
 .idea
 
+composer.lock
+
 *.cache
 *.log
 *.orig
