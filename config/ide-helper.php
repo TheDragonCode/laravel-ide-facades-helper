@@ -15,7 +15,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Model locations to include
+    | Facades locations to include
     |--------------------------------------------------------------------------
     |
     | Define in which directories the ide-helper:models command should look
