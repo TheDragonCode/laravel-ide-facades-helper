@@ -45,7 +45,7 @@ namespace <?= $namespace ?>
         public static function <?= $method->getName() ?>(<?= $method->join(true) ?>)
         {
             /** @var \<?= $item->getInstanceClassname() ?> $instance */
-            return $instance-><?= $method->getName() ?>(<?= $method->join() ?>);
+            <?= $method->getType() === 'void' ? '' : 'return ' ?>$instance-><?= $method->getName() ?>(<?= $method->join() ?>);
         }
 <?php endforeach; ?>
     }
