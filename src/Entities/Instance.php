@@ -40,7 +40,7 @@ final class Instance
     public function getNamespace(): string
     {
         return (string) Str::of($this->facade)
-            ->beforeLast('\\');
+                ->beforeLast('\\');
     }
 
     public function getFacadeBasename(): string
@@ -60,9 +60,13 @@ final class Instance
      */
     protected function getFilteredMethods(): array
     {
-        return $this->reflect()->getMethods(
-            $this->methodsVisibility()
+        $methods = $this->reflect()->getMethods(
+                $this->methodsVisibility()
         );
+
+        return array_values(array_filter($methods, function ($method) {
+            return ! Str::of($method->getName())->startsWith('__');
+        }));
     }
 
     /**
@@ -77,9 +81,9 @@ final class Instance
 
     protected function resolve($class)
     {
-        $obj = $class::getFacadeRoot();
+        $facade = $class::getFacadeRoot();
 
-        return new $obj();
+        return is_object($facade) ? $facade : $this->app($facade);
     }
 
     protected function methodsVisibility(): int
