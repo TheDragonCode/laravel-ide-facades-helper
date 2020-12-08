@@ -65,13 +65,15 @@ final class Method
         $params = [];
 
         foreach ($this->parameters() as $parameter) {
+            $variadic = $parameter->isVariadic() ? '...' : '';
+
             if (! $with_types) {
-                $params[] = '$' . $parameter->getName();
+                $params[] = $variadic . '$' . $parameter->getName();
 
                 continue;
             }
 
-            $str = $parameter->getType() . '$' . $parameter->getName();
+            $str = $parameter->getType() . $variadic . '$' . $parameter->getName();
 
             if ($parameter->isOptional() && $parameter->isDefaultValueAvailable()) {
                 $str .= ' = ' . $parameter->getValue();

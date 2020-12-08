@@ -33,7 +33,7 @@ namespace <?= $namespace ?>
 <?php endif; ?>
 <?php if ($parameters = $method->parameters()): ?>
 <?php foreach ($parameters as $parameter): ?>
-         * @param <?= $parameter->getType(true) ?> $<?= $parameter->getName() ?>
+         * @param <?= $parameter->getType(true) ?> <?= $parameter->isVariadic() ? '...' : '' ?>$<?= $parameter->getName() ?>
 
 <?php endforeach; ?>
          *

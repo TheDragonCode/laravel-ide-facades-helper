@@ -59,6 +59,11 @@ final class Parameter
         return $this->parameter->isDefaultValueAvailable();
     }
 
+    public function isVariadic(): bool
+    {
+        return $this->parameter->isVariadic();
+    }
+
     public function getDefaultValue()
     {
         return $this->parameter->getDefaultValue();
