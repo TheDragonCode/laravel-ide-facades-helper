@@ -26,7 +26,7 @@ return [
     */
 
     'facade_locations' => [
-        'app\Facades',
+        'app/Facades',
     ],
 
     /*
