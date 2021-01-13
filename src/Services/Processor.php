@@ -18,7 +18,7 @@ final class Processor extends BaseService
     {
         foreach ($items as $item) {
             $this->addItem(
-                Instance::make($item)
+                    Instance::make($item)
             );
         }
 
@@ -31,19 +31,26 @@ final class Processor extends BaseService
     public function store()
     {
         file_put_contents(
-            $this->storePath(),
-            $this->view('laravel-ide-facades-helper::facades', $this->items)
+                $this->storePath(),
+                $this->view('laravel-ide-facades-helper::facades', $this->items)
         );
     }
 
     public function filename(): string
     {
-        return sprintf('%s_facades.%s', $this->filePrefix(), $this->extension());
+        $filename = Config::get('ide-helper.filename');
+
+        return sprintf('%s_facades.%s', $this->filePrefix($filename), $this->extension($filename));
     }
 
-    protected function filePrefix(): string
+    protected function filePrefix(string $filename): string
     {
-        return Config::get('ide-helper.filename');
+        return pathinfo($filename, PATHINFO_FILENAME) ?: '_ide_helper';
+    }
+
+    protected function extension(string $filename): string
+    {
+        return pathinfo($filename, PATHINFO_EXTENSION) ?: 'php';
     }
 
     /**
@@ -54,13 +61,8 @@ final class Processor extends BaseService
     protected function storePath(): string
     {
         return $this->app()->basePath(
-            $this->filename()
+                $this->filename()
         );
-    }
-
-    protected function extension(): string
-    {
-        return Config::get('ide-helper.format');
     }
 
     /**
