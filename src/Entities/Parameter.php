@@ -31,12 +31,12 @@ final class Parameter
 
     public function getType(bool $mixed = false): string
     {
-        if ($class = $this->parameter->getClass()) {
-            return Str::start($class->getName(), '\\') . ' ';
-        }
-
         if ($type = $this->parameter->getType()) {
-            return $type->getName() . ' ';
+            $name = $type->getName();
+
+            return class_exists($name)
+                    ? Str::start($name, '\\') . ' '
+                    : $name . ' ';
         }
 
         return $mixed ? 'mixed ' : '';
@@ -45,7 +45,7 @@ final class Parameter
     public function getValue(): string
     {
         return $this->castParameterValue(
-            $this->getDefaultValue()
+                $this->getDefaultValue()
         );
     }
 
