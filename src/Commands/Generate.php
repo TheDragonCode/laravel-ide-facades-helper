@@ -40,8 +40,7 @@ final class Generate extends Command
 
     protected function prepare()
     {
-        $this->finder
-            ->in($this->directories());
+        $this->finder->in($this->directories());
     }
 
     /**
@@ -50,8 +49,8 @@ final class Generate extends Command
     protected function generate(): void
     {
         $this->processor
-            ->items($this->finder->get())
-            ->store();
+                ->items($this->finder->get())
+                ->store();
     }
 
     protected function directories(): array
