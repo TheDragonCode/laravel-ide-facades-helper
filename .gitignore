@@ -1,8 +1,9 @@
-/vendor/
-.idea
+.idea/
+vendor/
+
+*.bak
+*.cache
+*.clover
+*.orig
 
 composer.lock
-
-*.cache
-*.log
-*.orig
