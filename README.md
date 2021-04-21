@@ -13,12 +13,6 @@ Laravel IDE Facade Helper, generates correct PHPDocs for your Facade classes, to
 </p>
 
 
-## Content
-* [Installation](#installation)
-* [Usage](#usage)
-* [Credits](#credits)
-
-
 ## Installation
 
 Require this package with [composer](https://getcomposer.org) using the following command:
@@ -68,10 +62,17 @@ You will find additional settings in the options `facade_locations` and `facades
 
 > Note: The package uses the same file as [barryvdh/laravel-ide-helper](https://github.com/barryvdh/laravel-ide-helper). Therefore, if you need to redefine the paths, add the configuration from [this](config/ide-helper.php) file to it.
 
-## Credits
 
-- [Andrey Helldar][link_author]
-- [![All contributors][badge_contributors]][link_contributors]
+## License
+
+This package is licensed under the [MIT License](LICENSE).
+
+
+## For Enterprise
+
+Available as part of the Tidelift Subscription.
+
+The maintainers of `andrey-helldar/laravel-ide-facades-helper` and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source packages you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact packages you use. [Learn more](https://tidelift.com/subscription/pkg/packagist-andrey-helldar-laravel-ide-facades-helper?utm_source=packagist-andrey-helldar-laravel-ide-facades-helper&utm_medium=referral&utm_campaign=enterprise&utm_term=repo).
 
 
 [badge_contributors]:   https://img.shields.io/github/contributors/andrey-helldar/laravel-ide-facades-helper?style=flat-square
