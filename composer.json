@@ -25,11 +25,11 @@
         "symfony/finder": "^5.0"
     },
     "require-dev": {
-        "composer/composer": "^1.10"
+        "composer/composer": "^1.10|^2.0"
     },
     "autoload": {
         "classmap": [
-            "src/"
+            "src"
         ],
         "psr-4": {
             "Helldar\\LaravelIdeFacadesHelper\\": "src"
