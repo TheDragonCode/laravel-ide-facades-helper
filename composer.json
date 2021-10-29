@@ -1,5 +1,5 @@
 {
-    "name": "andrey-helldar/laravel-ide-facades-helper",
+    "name": "dragon-code/laravel-ide-facades-helper",
     "description": "Laravel IDE Facade Helper, generates correct PHPDocs for your Facade classes, to improve auto-completion.",
     "type": "library",
     "license": "MIT",
