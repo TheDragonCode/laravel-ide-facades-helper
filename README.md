@@ -2,14 +2,16 @@
 
 Laravel IDE Facade Helper, generates correct PHPDocs for your Facade classes, to improve auto-completion.
 
+<img src="https://preview.dragon-code.pro/TheDragonCode/ide-facades-helper.svg?brand=laravel" alt="Laravel IDE Facade Helper"/>
+
 <p align="center">
-    <a href="https://packagist.org/packages/andrey-helldar/laravel-ide-facades-helper"><img src="https://img.shields.io/packagist/dt/andrey-helldar/laravel-ide-facades-helper.svg?style=flat-square" alt="Total Downloads" /></a>
-    <a href="https://packagist.org/packages/andrey-helldar/laravel-ide-facades-helper"><img src="https://poser.pugx.org/andrey-helldar/laravel-ide-facades-helper/v/stable?format=flat-square" alt="Latest Stable Version" /></a>
-    <a href="https://packagist.org/packages/andrey-helldar/laravel-ide-facades-helper"><img src="https://poser.pugx.org/andrey-helldar/laravel-ide-facades-helper/v/unstable?format=flat-square" alt="Latest Unstable Version" /></a>
+    <a href="https://packagist.org/packages/dragon-code/laravel-ide-facades-helper"><img src="https://img.shields.io/packagist/dt/dragon-code/laravel-ide-facades-helper.svg?style=flat-square" alt="Total Downloads" /></a>
+    <a href="https://packagist.org/packages/dragon-code/laravel-ide-facades-helper"><img src="https://poser.pugx.org/dragon-code/laravel-ide-facades-helper/v/stable?format=flat-square" alt="Latest Stable Version" /></a>
+    <a href="https://packagist.org/packages/dragon-code/laravel-ide-facades-helper"><img src="https://poser.pugx.org/dragon-code/laravel-ide-facades-helper/v/unstable?format=flat-square" alt="Latest Unstable Version" /></a>
 </p>
 <p align="center">
     <a href="https://styleci.io/repos/277866838"><img src="https://styleci.io/repos/277866838/shield" alt="StyleCI" /></a>
-    <a href="LICENSE"><img src="https://poser.pugx.org/andrey-helldar/laravel-ide-facades-helper/license?format=flat-square" alt="License" /></a>
+    <a href="LICENSE"><img src="https://poser.pugx.org/dragon-code/laravel-ide-facades-helper/license?format=flat-square" alt="License" /></a>
 </p>
 
 
@@ -18,7 +20,7 @@ Laravel IDE Facade Helper, generates correct PHPDocs for your Facade classes, to
 Require this package with [composer](https://getcomposer.org) using the following command:
 
 ```bash
-$ composer require andrey-helldar/laravel-ide-facades-helper --dev
+$ composer require dragon-code/laravel-ide-facades-helper --dev
 ```
 
 This package makes use of [Laravels package auto-discovery mechanism](https://medium.com/@taylorotwell/package-auto-discovery-in-laravel-5-5-ea9e3ab20518), which means if you don't install dev dependencies in production, it also won't be loaded.
@@ -29,7 +31,7 @@ If for some reason you want manually control this:
   "extra": {
     "laravel": {
       "dont-discover": [
-        "andrey-helldar/laravel-ide-facades-helper",
+        "dragon-code/laravel-ide-facades-helper",
       ]
     }
   }
@@ -68,14 +70,7 @@ You will find additional settings in the options `facade_locations` and `facades
 This package is licensed under the [MIT License](LICENSE).
 
 
-## For Enterprise
+[badge_contributors]:   https://img.shields.io/github/contributors/TheDragonCode/laravel-ide-facades-helper?style=flat-square
 
-Available as part of the Tidelift Subscription.
-
-The maintainers of `andrey-helldar/laravel-ide-facades-helper` and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source packages you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact packages you use. [Learn more](https://tidelift.com/subscription/pkg/packagist-andrey-helldar-laravel-ide-facades-helper?utm_source=packagist-andrey-helldar-laravel-ide-facades-helper&utm_medium=referral&utm_campaign=enterprise&utm_term=repo).
-
-
-[badge_contributors]:   https://img.shields.io/github/contributors/andrey-helldar/laravel-ide-facades-helper?style=flat-square
-
-[link_author]:          https://github.com/andrey-helldar
-[link_contributors]:    https://github.com/andrey-helldar/laravel-ide-facades-helper/graphs/contributors
+[link_author]:          https://github.com/TheDragonCode
+[link_contributors]:    https://github.com/TheDragonCode/laravel-ide-facades-helper/graphs/contributors
