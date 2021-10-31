@@ -3,7 +3,7 @@
 namespace Helldar\LaravelIdeFacadesHelper\Entities;
 
 use Helldar\LaravelIdeFacadesHelper\Services\DocBlock;
-use Helldar\LaravelIdeFacadesHelper\Traits\Makeable;
+use Helldar\Support\Concerns\Makeable;
 use Illuminate\Support\Str;
 use ReflectionMethod;
 use ReflectionNamedType;
@@ -27,12 +27,10 @@ final class Method
 
     public function getType(): ?string
     {
-        $type = null;
-
         if ($return_type = $this->method->getReturnType()) {
             $type = $return_type instanceof ReflectionNamedType
-                ? $return_type->getName()
-                : (string) $return_type;
+                    ? $return_type->getName()
+                    : (string) $return_type;
         } else {
             $type = $this->doc->getReturnType();
         }
@@ -92,8 +90,8 @@ final class Method
         }
 
         return class_exists($value) || interface_exists($value)
-            ? Str::start($value, '\\')
-            : $value;
+                ? Str::start($value, '\\')
+                : $value;
     }
 
     protected function getParameters()
@@ -104,7 +102,7 @@ final class Method
     protected function getDocBlock(ReflectionMethod $method): DocBlock
     {
         return DocBlock::make(
-            $method->getDocComment() ?: null
+                $method->getDocComment() ?: null
         );
     }
 }

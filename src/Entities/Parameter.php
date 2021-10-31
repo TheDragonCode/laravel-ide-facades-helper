@@ -3,7 +3,9 @@
 namespace Helldar\LaravelIdeFacadesHelper\Entities;
 
 use Helldar\LaravelIdeFacadesHelper\Services\DocBlock;
-use Helldar\LaravelIdeFacadesHelper\Traits\Makeable;
+use Helldar\Support\Concerns\Makeable;
+use Helldar\Support\Facades\Helpers\Boolean;
+use Helldar\Support\Facades\Helpers\Instance as InstanceHelper;
 use Illuminate\Support\Str;
 use ReflectionParameter;
 
@@ -34,7 +36,7 @@ final class Parameter
         if ($type = $this->parameter->getType()) {
             $name = $type->getName();
 
-            return class_exists($name)
+            return InstanceHelper::exists($name)
                     ? Str::start($name, '\\') . ' '
                     : $name . ' ';
         }
@@ -45,7 +47,7 @@ final class Parameter
     public function getValue(): string
     {
         return $this->castParameterValue(
-            $this->getDefaultValue()
+                $this->getDefaultValue()
         );
     }
 
@@ -72,7 +74,7 @@ final class Parameter
     protected function castParameterValue($value): string
     {
         if (is_bool($value)) {
-            return $value ? 'true' : 'false';
+            return Boolean::convertToString($value);
         }
 
         if (is_array($value)) {

@@ -2,7 +2,7 @@
 
 namespace Helldar\LaravelIdeFacadesHelper\Services;
 
-use Helldar\LaravelIdeFacadesHelper\Traits\Makeable;
+use Helldar\Support\Concerns\Makeable;
 use phpDocumentor\Reflection\DocBlockFactory;
 
 final class DocBlock
@@ -15,7 +15,7 @@ final class DocBlock
     public function __construct(string $docblock = null)
     {
         $this->doc = $this->factory()->create(
-            $docblock ?: '/** */'
+                $docblock ?: '/** */'
         );
     }
 
@@ -27,8 +27,8 @@ final class DocBlock
     public function getReturnType(): ?string
     {
         return $this->doc->hasTag('return')
-            ? $this->doc->getTagsByName('return')[0]->getName()
-            : null;
+                ? $this->doc->getTagsByName('return')[0]->getName()
+                : null;
     }
 
     protected function factory(): DocBlockFactory

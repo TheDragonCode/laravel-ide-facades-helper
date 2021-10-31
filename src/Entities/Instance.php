@@ -3,7 +3,7 @@
 namespace Helldar\LaravelIdeFacadesHelper\Entities;
 
 use Helldar\LaravelIdeFacadesHelper\Traits\Containable;
-use Helldar\LaravelIdeFacadesHelper\Traits\Makeable;
+use Helldar\Support\Concerns\Makeable;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Str;
 use ReflectionClass;
@@ -11,8 +11,8 @@ use ReflectionMethod;
 
 final class Instance
 {
-    use Makeable;
     use Containable;
+    use Makeable;
 
     /** @var \Illuminate\Support\Facades\Facade */
     protected $facade;
@@ -61,7 +61,7 @@ final class Instance
     protected function getFilteredMethods(): array
     {
         $methods = $this->reflect()->getMethods(
-            $this->methodsVisibility()
+                $this->methodsVisibility()
         );
 
         return array_values(array_filter($methods, function ($method) {

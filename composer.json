@@ -16,16 +16,17 @@
     ],
     "require": {
         "php": "^7.2|^8.0",
-        "phpdocumentor/reflection-docblock": "^5.1",
+        "andrey-helldar/support": "^4.7",
         "illuminate/console": "^7.0|^8.0",
         "illuminate/container": "^7.0|^8.0",
         "illuminate/contracts": "^7.0|^8.0",
         "illuminate/support": "^7.0|^8.0",
         "illuminate/view": "^7.0|^8.0",
+        "phpdocumentor/reflection-docblock": "^5.1",
         "symfony/finder": "^5.0"
     },
     "require-dev": {
-        "composer/composer": "^1.10|^2.0"
+        "composer/composer": "^2.0"
     },
     "autoload": {
         "classmap": [
