@@ -9,7 +9,8 @@
  * This file should not be included in your code, only analyzed by your IDE!
  *
  * @author Andrey Helldar <helldar@ai-rus.com>
- * @see https://github.com/andrey-helldar/laravel-ide-facades-helper
+ *
+ * @see https://github.com/TheDragonCode/laravel-ide-facades-helper
  */
 
 <?php /** @var array $items */ ?>

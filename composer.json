@@ -5,8 +5,8 @@
     "license": "MIT",
     "keywords": ["laravel", "autocomplete", "ide", "helper", "phpstorm", "netbeans", "sublime", "codeintel", "phpdoc"],
     "support": {
-        "issues": "https://github.com/andrey-helldar/laravel-ide-facades-helper/issues",
-        "source": "https://github.com/andrey-helldar/laravel-ide-facades-helper"
+        "issues": "https://github.com/TheDragonCode/laravel-ide-facades-helper/issues",
+        "source": "https://github.com/TheDragonCode/laravel-ide-facades-helper"
     },
     "authors": [
         {
