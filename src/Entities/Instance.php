@@ -9,7 +9,7 @@ use Illuminate\Support\Str;
 use ReflectionClass;
 use ReflectionMethod;
 
-final class Instance
+class Instance
 {
     use Containable;
     use Makeable;

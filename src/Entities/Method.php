@@ -9,7 +9,7 @@ use ReflectionMethod;
 use ReflectionNamedType;
 use ReflectionParameter;
 
-final class Method
+class Method
 {
     use Makeable;
 

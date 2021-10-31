@@ -5,7 +5,7 @@ namespace Helldar\LaravelIdeFacadesHelper;
 use Helldar\LaravelIdeFacadesHelper\Commands\Generate;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
-final class ServiceProvider extends BaseServiceProvider
+class ServiceProvider extends BaseServiceProvider
 {
     public function boot()
     {

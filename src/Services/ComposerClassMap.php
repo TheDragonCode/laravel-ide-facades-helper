@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 use Symfony\Component\Finder\Finder as SymfonyFinder;
 use Symfony\Component\Finder\SplFileInfo;
 
-final class ComposerClassMap extends BaseService
+class ComposerClassMap extends BaseService
 {
     use Containable;
 

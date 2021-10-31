@@ -5,7 +5,7 @@ namespace Helldar\LaravelIdeFacadesHelper\Services;
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\Str;
 
-final class Finder extends BaseService
+class Finder extends BaseService
 {
     /** @var \Helldar\LaravelIdeFacadesHelper\Services\ComposerClassMap */
     protected $composer;

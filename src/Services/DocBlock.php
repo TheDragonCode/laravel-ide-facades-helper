@@ -5,7 +5,7 @@ namespace Helldar\LaravelIdeFacadesHelper\Services;
 use Helldar\Support\Concerns\Makeable;
 use phpDocumentor\Reflection\DocBlockFactory;
 
-final class DocBlock
+class DocBlock
 {
     use Makeable;
 

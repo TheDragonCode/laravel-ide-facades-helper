@@ -8,7 +8,7 @@ use Helldar\LaravelIdeFacadesHelper\Traits\Containable;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Config;
 
-final class Generate extends Command
+class Generate extends Command
 {
     use Containable;
 

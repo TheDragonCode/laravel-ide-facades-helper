@@ -9,7 +9,7 @@ use Helldar\Support\Facades\Helpers\Instance as InstanceHelper;
 use Illuminate\Support\Str;
 use ReflectionParameter;
 
-final class Parameter
+class Parameter
 {
     use Makeable;
 

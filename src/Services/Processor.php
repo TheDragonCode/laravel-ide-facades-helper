@@ -7,7 +7,7 @@ use Helldar\LaravelIdeFacadesHelper\Traits\Containable;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Config;
 
-final class Processor extends BaseService
+class Processor extends BaseService
 {
     use Containable;
 
