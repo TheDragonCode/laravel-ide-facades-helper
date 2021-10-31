@@ -1,6 +1,6 @@
 <?php
 
-namespace Helldar\LaravelIdeFacadesHelper\Traits;
+namespace DragonCode\LaravelIdeFacadesHelper\Traits;
 
 use Illuminate\Container\Container;
 use Illuminate\Contracts\Foundation\Application;

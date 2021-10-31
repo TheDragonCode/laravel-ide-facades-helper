@@ -1,8 +1,8 @@
 <?php
 
-namespace Helldar\LaravelIdeFacadesHelper\Services;
+namespace DragonCode\LaravelIdeFacadesHelper\Services;
 
-use Helldar\LaravelIdeFacadesHelper\Traits\Containable;
+use DragonCode\LaravelIdeFacadesHelper\Traits\Containable;
 
 abstract class BaseService
 {

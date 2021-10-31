@@ -1,8 +1,8 @@
 <?php
 
-namespace Helldar\LaravelIdeFacadesHelper;
+namespace DragonCode\LaravelIdeFacadesHelper;
 
-use Helldar\LaravelIdeFacadesHelper\Commands\Generate;
+use DragonCode\LaravelIdeFacadesHelper\Commands\Generate;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
 class ServiceProvider extends BaseServiceProvider

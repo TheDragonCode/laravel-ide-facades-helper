@@ -1,13 +1,13 @@
 <?php
 
-namespace Helldar\LaravelIdeFacadesHelper\Services;
+namespace DragonCode\LaravelIdeFacadesHelper\Services;
 
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\Str;
 
 class Finder extends BaseService
 {
-    /** @var \Helldar\LaravelIdeFacadesHelper\Services\ComposerClassMap */
+    /** @var \DragonCode\LaravelIdeFacadesHelper\Services\ComposerClassMap */
     protected $composer;
 
     /** @var array */

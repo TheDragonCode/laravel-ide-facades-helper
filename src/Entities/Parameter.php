@@ -1,8 +1,8 @@
 <?php
 
-namespace Helldar\LaravelIdeFacadesHelper\Entities;
+namespace DragonCode\LaravelIdeFacadesHelper\Entities;
 
-use Helldar\LaravelIdeFacadesHelper\Services\DocBlock;
+use DragonCode\LaravelIdeFacadesHelper\Services\DocBlock;
 use Helldar\Support\Concerns\Makeable;
 use Helldar\Support\Facades\Helpers\Boolean;
 use Helldar\Support\Facades\Helpers\Instance as InstanceHelper;
@@ -16,7 +16,7 @@ class Parameter
     /** @var \ReflectionParameter */
     protected $parameter;
 
-    /** @var \Helldar\LaravelIdeFacadesHelper\Services\DocBlock */
+    /** @var \DragonCode\LaravelIdeFacadesHelper\Services\DocBlock */
     protected $doc;
 
     public function __construct(ReflectionParameter $parameter, DocBlock $doc)

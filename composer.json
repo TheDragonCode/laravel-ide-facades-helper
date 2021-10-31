@@ -33,7 +33,7 @@
             "src"
         ],
         "psr-4": {
-            "Helldar\\LaravelIdeFacadesHelper\\": "src"
+            "DragonCode\\LaravelIdeFacadesHelper\\": "src"
         }
     },
     "config": {
@@ -45,7 +45,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Helldar\\LaravelIdeFacadesHelper\\ServiceProvider"
+                "DragonCode\\LaravelIdeFacadesHelper\\ServiceProvider"
             ]
         }
     }

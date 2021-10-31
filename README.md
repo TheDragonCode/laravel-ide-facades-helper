@@ -38,14 +38,14 @@ If for some reason you want manually control this:
   ```
 - Add the following class to the `providers` array in `config/app.php`:
   ```php
-  Helldar\LaravelIdeFacadesHelper\ServiceProvider::class,
+  DragonCode\LaravelIdeFacadesHelper\ServiceProvider::class,
   ```
   If you want to manually load it only in non-production environments, instead you can add this to your `AppServiceProvider` with the `register()` method:
   ```php
   public function register()
   {
       if ($this->app->environment() !== 'production') {
-          $this->app->register(\Helldar\LaravelIdeFacadesHelper\ServiceProvider::class);
+          $this->app->register(\DragonCode\LaravelIdeFacadesHelper\ServiceProvider::class);
       }
       // ...
   }

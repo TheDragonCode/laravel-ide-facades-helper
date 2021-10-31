@@ -1,8 +1,8 @@
 <?php
 
-namespace Helldar\LaravelIdeFacadesHelper\Entities;
+namespace DragonCode\LaravelIdeFacadesHelper\Entities;
 
-use Helldar\LaravelIdeFacadesHelper\Traits\Containable;
+use DragonCode\LaravelIdeFacadesHelper\Traits\Containable;
 use Helldar\Support\Concerns\Makeable;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Str;
@@ -28,7 +28,7 @@ class Instance
     /**
      * @throws \ReflectionException
      *
-     * @return \Helldar\LaravelIdeFacadesHelper\Entities\Method[]
+     * @return \DragonCode\LaravelIdeFacadesHelper\Entities\Method[]
      */
     public function methods(): array
     {

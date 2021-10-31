@@ -14,7 +14,7 @@
  */
 
 <?php /** @var array $items */ ?>
-<?php /** @var \Helldar\LaravelIdeFacadesHelper\Entities\Instance[] $classes */ ?>
+<?php /** @var \DragonCode\LaravelIdeFacadesHelper\Entities\Instance[] $classes */ ?>
 
 <?php foreach ($items as $namespace => $classes): ?>
 namespace <?= $namespace ?>

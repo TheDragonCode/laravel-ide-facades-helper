@@ -1,8 +1,8 @@
 <?php
 
-namespace Helldar\LaravelIdeFacadesHelper\Entities;
+namespace DragonCode\LaravelIdeFacadesHelper\Entities;
 
-use Helldar\LaravelIdeFacadesHelper\Services\DocBlock;
+use DragonCode\LaravelIdeFacadesHelper\Services\DocBlock;
 use Helldar\Support\Concerns\Makeable;
 use Illuminate\Support\Str;
 use ReflectionMethod;
@@ -15,7 +15,7 @@ class Method
 
     protected $method;
 
-    /** @var \Helldar\LaravelIdeFacadesHelper\Services\DocBlock */
+    /** @var \DragonCode\LaravelIdeFacadesHelper\Services\DocBlock */
     protected $doc;
 
     public function __construct(ReflectionMethod $method)
@@ -49,7 +49,7 @@ class Method
     }
 
     /**
-     * @return \Helldar\LaravelIdeFacadesHelper\Entities\Parameter[]
+     * @return \DragonCode\LaravelIdeFacadesHelper\Entities\Parameter[]
      */
     public function parameters()
     {

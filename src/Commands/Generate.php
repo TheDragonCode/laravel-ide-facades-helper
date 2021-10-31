@@ -1,10 +1,10 @@
 <?php
 
-namespace Helldar\LaravelIdeFacadesHelper\Commands;
+namespace DragonCode\LaravelIdeFacadesHelper\Commands;
 
-use Helldar\LaravelIdeFacadesHelper\Services\Finder;
-use Helldar\LaravelIdeFacadesHelper\Services\Processor;
-use Helldar\LaravelIdeFacadesHelper\Traits\Containable;
+use DragonCode\LaravelIdeFacadesHelper\Services\Finder;
+use DragonCode\LaravelIdeFacadesHelper\Services\Processor;
+use DragonCode\LaravelIdeFacadesHelper\Traits\Containable;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Config;
 
@@ -16,15 +16,15 @@ class Generate extends Command
 
     protected $description = 'Generate autocompletion for facades';
 
-    /** @var \Helldar\LaravelIdeFacadesHelper\Services\Processor */
+    /** @var \DragonCode\LaravelIdeFacadesHelper\Services\Processor */
     protected $processor;
 
-    /** @var \Helldar\LaravelIdeFacadesHelper\Services\Finder */
+    /** @var \DragonCode\LaravelIdeFacadesHelper\Services\Finder */
     protected $finder;
 
     /**
-     * @param  \Helldar\LaravelIdeFacadesHelper\Services\Finder  $finder
-     * @param  \Helldar\LaravelIdeFacadesHelper\Services\Processor  $processor
+     * @param  \DragonCode\LaravelIdeFacadesHelper\Services\Finder  $finder
+     * @param  \DragonCode\LaravelIdeFacadesHelper\Services\Processor  $processor
      *
      * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */

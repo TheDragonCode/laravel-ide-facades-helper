@@ -1,9 +1,9 @@
 <?php
 
-namespace Helldar\LaravelIdeFacadesHelper\Services;
+namespace DragonCode\LaravelIdeFacadesHelper\Services;
 
-use Helldar\LaravelIdeFacadesHelper\Entities\Instance;
-use Helldar\LaravelIdeFacadesHelper\Traits\Containable;
+use DragonCode\LaravelIdeFacadesHelper\Entities\Instance;
+use DragonCode\LaravelIdeFacadesHelper\Traits\Containable;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Config;
 
@@ -11,7 +11,7 @@ class Processor extends BaseService
 {
     use Containable;
 
-    /** @var \Helldar\LaravelIdeFacadesHelper\Entities\Instance[] */
+    /** @var \DragonCode\LaravelIdeFacadesHelper\Entities\Instance[] */
     protected $items = [];
 
     public function items(array $items): self
