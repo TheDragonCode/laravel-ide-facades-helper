@@ -1,7 +1,5 @@
 ## Laravel IDE Facade Helper
 
-Laravel IDE Facade Helper, generates correct PHPDocs for your Facade classes, to improve auto-completion.
-
 <img src="https://preview.dragon-code.pro/TheDragonCode/ide-facades-helper.svg?brand=laravel" alt="Laravel IDE Facade Helper"/>
 
 <p align="center">
@@ -13,6 +11,11 @@ Laravel IDE Facade Helper, generates correct PHPDocs for your Facade classes, to
     <a href="https://styleci.io/repos/277866838"><img src="https://styleci.io/repos/277866838/shield" alt="StyleCI" /></a>
     <a href="LICENSE"><img src="https://poser.pugx.org/dragon-code/laravel-ide-facades-helper/license?format=flat-square" alt="License" /></a>
 </p>
+
+> Laravel IDE Facade Helper, generates correct PHPDocs for your Facade classes, to improve auto-completion.
+
+> Note
+> This package has been deprecated. Use the [Laravel Idea](https://plugins.jetbrains.com/plugin/13441-laravel-idea) plugin instead.
 
 
 ## Installation
