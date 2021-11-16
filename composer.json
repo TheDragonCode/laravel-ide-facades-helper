@@ -28,6 +28,9 @@
     "require-dev": {
         "composer/composer": "^2.0"
     },
+    "conflict": {
+        "andrey-helldar/laravel-ide-facades-helper": "*"
+    },
     "autoload": {
         "classmap": [
             "src"
