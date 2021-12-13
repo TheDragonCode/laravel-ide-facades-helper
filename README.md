@@ -26,9 +26,11 @@ Require this package with [composer](https://getcomposer.org) using the followin
 $ composer require dragon-code/laravel-ide-facades-helper --dev
 ```
 
-This package makes use of [Laravels package auto-discovery mechanism](https://medium.com/@taylorotwell/package-auto-discovery-in-laravel-5-5-ea9e3ab20518), which means if you don't install dev dependencies in production, it also won't be loaded.
+This package makes use of [Laravels package auto-discovery mechanism](https://medium.com/@taylorotwell/package-auto-discovery-in-laravel-5-5-ea9e3ab20518), which means if you don't
+install dev dependencies in production, it also won't be loaded.
 
 If for some reason you want manually control this:
+
 - add the package to the `extra.laravel.dont-discover` key in `composer.json`, e.g.
   ```json
   "extra": {
@@ -76,4 +78,5 @@ This package is licensed under the [MIT License](LICENSE).
 [badge_contributors]:   https://img.shields.io/github/contributors/TheDragonCode/laravel-ide-facades-helper?style=flat-square
 
 [link_author]:          https://github.com/TheDragonCode
+
 [link_contributors]:    https://github.com/TheDragonCode/laravel-ide-facades-helper/graphs/contributors

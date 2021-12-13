@@ -3,9 +3,9 @@
 namespace DragonCode\LaravelIdeFacadesHelper\Entities;
 
 use DragonCode\LaravelIdeFacadesHelper\Services\DocBlock;
-use Helldar\Support\Concerns\Makeable;
-use Helldar\Support\Facades\Helpers\Boolean;
-use Helldar\Support\Facades\Helpers\Instance as InstanceHelper;
+use DragonCode\Support\Concerns\Makeable;
+use DragonCode\Support\Facades\Helpers\Boolean;
+use DragonCode\Support\Facades\Helpers\Instance as InstanceHelper;
 use Illuminate\Support\Str;
 use ReflectionParameter;
 

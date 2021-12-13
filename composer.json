@@ -3,7 +3,7 @@
     "description": "Laravel IDE Facade Helper, generates correct PHPDocs for your Facade classes, to improve auto-completion.",
     "type": "library",
     "license": "MIT",
-    "keywords": ["laravel", "autocomplete", "ide", "helper", "phpstorm", "netbeans", "sublime", "codeintel", "phpdoc"],
+    "keywords": ["laravel", "autocomplete", "ide", "helper", "phpdoc"],
     "support": {
         "issues": "https://github.com/TheDragonCode/laravel-ide-facades-helper/issues",
         "source": "https://github.com/TheDragonCode/laravel-ide-facades-helper"
@@ -16,7 +16,7 @@
     ],
     "require": {
         "php": "^7.2|^8.0",
-        "andrey-helldar/support": "^4.7",
+        "dragon-code/support": "^5.4",
         "illuminate/console": "^7.0|^8.0",
         "illuminate/container": "^7.0|^8.0",
         "illuminate/contracts": "^7.0|^8.0",

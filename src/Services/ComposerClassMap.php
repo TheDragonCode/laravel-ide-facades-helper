@@ -34,17 +34,17 @@ class ComposerClassMap extends BaseService
     protected function listClassesInPsrMaps(): array
     {
         $prefixes = array_merge(
-            $this->composer->getPrefixes(),
-            $this->composer->getPrefixesPsr4()
+                $this->composer->getPrefixes(),
+                $this->composer->getPrefixesPsr4()
         );
 
         $classes = [];
 
         foreach ($prefixes as $namespace => $directories) {
             $files = $this->finder()
-                ->in($directories)
-                ->files()
-                ->name('*.php');
+                    ->in($directories)
+                    ->files()
+                    ->name('*.php');
 
             foreach ($files as $file) {
                 if ($file instanceof SplFileInfo) {
@@ -61,11 +61,11 @@ class ComposerClassMap extends BaseService
     protected function getFullyQualifiedClassNameFromFile(SplFileInfo $file): string
     {
         return (string) Str::of($file->getRealPath())
-            ->after($this->basePath())
-            ->replaceFirst('app' . DIRECTORY_SEPARATOR, $this->app()->getNamespace())
-            ->replaceLast('.php', '')
-            ->trim(' \\')
-            ->title();
+                ->after($this->basePath())
+                ->replaceFirst('app' . DIRECTORY_SEPARATOR, $this->app()->getNamespace())
+                ->replaceLast('.php', '')
+                ->trim(' \\')
+                ->title();
     }
 
     protected function finder(): SymfonyFinder

@@ -3,7 +3,7 @@
 namespace DragonCode\LaravelIdeFacadesHelper\Entities;
 
 use DragonCode\LaravelIdeFacadesHelper\Services\DocBlock;
-use Helldar\Support\Concerns\Makeable;
+use DragonCode\Support\Concerns\Makeable;
 use Illuminate\Support\Str;
 use ReflectionMethod;
 use ReflectionNamedType;

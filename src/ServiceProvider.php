@@ -22,22 +22,22 @@ class ServiceProvider extends BaseServiceProvider
     protected function bootCommands(): void
     {
         $this->commands([
-            Generate::class,
+                Generate::class,
         ]);
     }
 
     protected function bootPublishes(): void
     {
         $this->publishes([
-            __DIR__ . '/../config/ide-helper.php' => $this->app->configPath('ide-helper.php'),
+                __DIR__ . '/../config/ide-helper.php' => $this->app->configPath('ide-helper.php'),
         ], 'config');
     }
 
     protected function bootViews(): void
     {
         $this->loadViewsFrom(
-            __DIR__ . '/../resources/views',
-            'laravel-ide-facades-helper'
+                __DIR__ . '/../resources/views',
+                'laravel-ide-facades-helper'
         );
     }
 

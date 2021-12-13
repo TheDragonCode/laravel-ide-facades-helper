@@ -2,7 +2,7 @@
 
 namespace DragonCode\LaravelIdeFacadesHelper\Services;
 
-use Helldar\Support\Concerns\Makeable;
+use DragonCode\Support\Concerns\Makeable;
 use phpDocumentor\Reflection\DocBlockFactory;
 
 class DocBlock

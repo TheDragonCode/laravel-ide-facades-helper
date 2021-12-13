@@ -21,8 +21,8 @@ trait Containable
     protected function app($abstract = null, array $parameters = []): Application
     {
         return is_null($abstract)
-            ? Container::getInstance()
-            : $this->containerMake($abstract, $parameters);
+                ? Container::getInstance()
+                : $this->containerMake($abstract, $parameters);
     }
 
     /**
@@ -38,9 +38,9 @@ trait Containable
         $version = $this->version();
 
         return $this
-            ->containerMake(ViewFactory::class)
-            ->make($view, compact('version', 'items'))
-            ->render();
+                ->containerMake(ViewFactory::class)
+                ->make($view, compact('version', 'items'))
+                ->render();
     }
 
     /**

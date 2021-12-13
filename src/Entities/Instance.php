@@ -3,7 +3,7 @@
 namespace DragonCode\LaravelIdeFacadesHelper\Entities;
 
 use DragonCode\LaravelIdeFacadesHelper\Traits\Containable;
-use Helldar\Support\Concerns\Makeable;
+use DragonCode\Support\Concerns\Makeable;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Str;
 use ReflectionClass;
