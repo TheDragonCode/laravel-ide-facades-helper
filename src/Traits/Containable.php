@@ -11,8 +11,8 @@ trait Containable
     /**
      * Get the available container instance.
      *
-     * @param  string|null  $abstract
-     * @param  array  $parameters
+     * @param string|null $abstract
+     * @param array $parameters
      *
      * @throws \Illuminate\Contracts\Container\BindingResolutionException
      *
@@ -26,7 +26,7 @@ trait Containable
     }
 
     /**
-     * @param  string  $view
+     * @param string $view
      * @param $items
      *
      * @throws \Illuminate\Contracts\Container\BindingResolutionException
@@ -38,14 +38,14 @@ trait Containable
         $version = $this->version();
 
         return $this
-                ->containerMake(ViewFactory::class)
-                ->make($view, compact('version', 'items'))
-                ->render();
+            ->containerMake(ViewFactory::class)
+            ->make($view, compact('version', 'items'))
+            ->render();
     }
 
     /**
-     * @param  null  $abstract
-     * @param  array  $parameters
+     * @param null $abstract
+     * @param array $parameters
      *
      * @throws \Illuminate\Contracts\Container\BindingResolutionException
      *

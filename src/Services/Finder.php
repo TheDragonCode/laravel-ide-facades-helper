@@ -19,7 +19,7 @@ class Finder extends BaseService
     }
 
     /**
-     * @param  array|string  $directories
+     * @param array|string $directories
      *
      * @return $this
      */
@@ -53,7 +53,7 @@ class Finder extends BaseService
     }
 
     /**
-     * @param  array|string  $directories
+     * @param array|string $directories
      *
      * @return array
      */

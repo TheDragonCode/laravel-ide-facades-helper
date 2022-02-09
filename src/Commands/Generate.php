@@ -23,8 +23,8 @@ class Generate extends Command
     protected $finder;
 
     /**
-     * @param  \DragonCode\LaravelIdeFacadesHelper\Services\Finder  $finder
-     * @param  \DragonCode\LaravelIdeFacadesHelper\Services\Processor  $processor
+     * @param \DragonCode\LaravelIdeFacadesHelper\Services\Finder $finder
+     * @param \DragonCode\LaravelIdeFacadesHelper\Services\Processor $processor
      *
      * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */
@@ -49,8 +49,8 @@ class Generate extends Command
     protected function generate(): void
     {
         $this->processor
-                ->items($this->finder->get())
-                ->store();
+            ->items($this->finder->get())
+            ->store();
     }
 
     protected function directories(): array

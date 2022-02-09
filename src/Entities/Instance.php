@@ -7,6 +7,7 @@ use DragonCode\Support\Concerns\Makeable;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Str;
 use ReflectionClass;
+use ReflectionException;
 use ReflectionMethod;
 
 class Instance
@@ -26,7 +27,7 @@ class Instance
     }
 
     /**
-     * @throws \ReflectionException
+     * @throws ReflectionException
      *
      * @return \DragonCode\LaravelIdeFacadesHelper\Entities\Method[]
      */
@@ -40,7 +41,7 @@ class Instance
     public function getNamespace(): string
     {
         return (string) Str::of($this->facade)
-                ->beforeLast('\\');
+            ->beforeLast('\\');
     }
 
     public function getFacadeBasename(): string
@@ -54,7 +55,7 @@ class Instance
     }
 
     /**
-     * @throws \ReflectionException
+     * @throws ReflectionException
      *
      * @return array
      */
@@ -70,9 +71,9 @@ class Instance
     }
 
     /**
-     * @throws \ReflectionException
+     * @throws ReflectionException
      *
-     * @return \ReflectionClass
+     * @return ReflectionClass
      */
     protected function reflect(): ReflectionClass
     {

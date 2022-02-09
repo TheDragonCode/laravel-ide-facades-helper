@@ -6,6 +6,7 @@ use DragonCode\LaravelIdeFacadesHelper\Entities\Instance;
 use DragonCode\LaravelIdeFacadesHelper\Traits\Containable;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Config;
+use stdClass;
 
 class Processor extends BaseService
 {
@@ -66,9 +67,9 @@ class Processor extends BaseService
     }
 
     /**
-     * @param  \Illuminate\Support\Facades\Facade|string  $classname
+     * @param \Illuminate\Support\Facades\Facade|string $classname
      *
-     * @return \stdClass
+     * @return stdClass
      */
     protected function resolve(string $classname)
     {

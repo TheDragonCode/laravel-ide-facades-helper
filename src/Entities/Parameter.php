@@ -13,7 +13,7 @@ class Parameter
 {
     use Makeable;
 
-    /** @var \ReflectionParameter */
+    /** @var ReflectionParameter */
     protected $parameter;
 
     /** @var \DragonCode\LaravelIdeFacadesHelper\Services\DocBlock */

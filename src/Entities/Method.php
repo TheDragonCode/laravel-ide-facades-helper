@@ -83,7 +83,7 @@ class Method
         return implode(', ', $params);
     }
 
-    protected function castClassname(string $value = null): ?string
+    protected function castClassname(?string $value = null): ?string
     {
         if ($value === 'self' || $value === 'static') {
             return Str::start($this->method->class, '\\');

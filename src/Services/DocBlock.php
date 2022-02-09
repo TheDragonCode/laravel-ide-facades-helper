@@ -12,7 +12,7 @@ class DocBlock
     /** @var \phpDocumentor\Reflection\DocBlock */
     protected $doc;
 
-    public function __construct(string $docblock = null)
+    public function __construct(?string $docblock = null)
     {
         $this->doc = $this->factory()->create(
                 $docblock ?: '/** */'

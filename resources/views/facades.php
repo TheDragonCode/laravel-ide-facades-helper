@@ -1,10 +1,10 @@
-<?= '<?php' ?>
+<?php echo '<?php'; ?>
 
 // @formatter:off
 
 /**
  * A helper file for Laravel, to provide autocomplete information to your IDE
- * Generated for Laravel <?= $version ?> on <?= date('Y-m-d H:i:s') ?>.
+ * Generated for Laravel <?php echo $version; ?> on <?php echo date('Y-m-d H:i:s'); ?>.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -16,40 +16,40 @@
 <?php /** @var array $items */ ?>
 <?php /** @var \DragonCode\LaravelIdeFacadesHelper\Entities\Instance[] $classes */ ?>
 
-<?php foreach ($items as $namespace => $classes): ?>
-namespace <?= $namespace ?>
+<?php foreach ($items as $namespace => $classes) { ?>
+namespace <?php echo $namespace; ?>
 {
-<?php foreach ($classes as $item): ?>
+<?php foreach ($classes as $item) { ?>
 
-    class <?= $item->getFacadeBasename() ?>
+    class <?php echo $item->getFacadeBasename(); ?>
 
     {
-<?php foreach ($item->methods() as $method): ?>
+<?php foreach ($item->methods() as $method) { ?>
 
         /**
-<?php if ($desctiption = $method->getDescription()): ?>
-         * <?= $desctiption ?>
+<?php if ($desctiption = $method->getDescription()) { ?>
+         * <?php echo $desctiption; ?>
 
          *
-<?php endif; ?>
-<?php if ($parameters = $method->parameters()): ?>
-<?php foreach ($parameters as $parameter): ?>
-         * @param <?= $parameter->getType(true) ?> <?= $parameter->isVariadic() ? '...' : '' ?>$<?= $parameter->getName() ?>
+<?php } ?>
+<?php if ($parameters = $method->parameters()) { ?>
+<?php foreach ($parameters as $parameter) { ?>
+         * @param <?php echo $parameter->getType(true); ?> <?php echo $parameter->isVariadic() ? '...' : ''; ?>$<?php echo $parameter->getName(); ?>
 
-<?php endforeach; ?>
+<?php } ?>
          *
-<?php endif; ?>
-         * @return <?= $method->getType() ?>
+<?php } ?>
+         * @return <?php echo $method->getType(); ?>
 
          * @static
          */
-        public static function <?= $method->getName() ?>(<?= $method->join(true) ?>)
+        public static function <?php echo $method->getName(); ?>(<?php echo $method->join(true); ?>)
         {
-            /** @var \<?= $item->getInstanceClassname() ?> $instance */
-            <?= $method->getType() === 'void' ? '' : 'return ' ?>$instance-><?= $method->getName() ?>(<?= $method->join() ?>);
+            /** @var \<?php echo $item->getInstanceClassname(); ?> $instance */
+            <?php echo $method->getType() === 'void' ? '' : 'return '; ?>$instance-><?php echo $method->getName(); ?>(<?php echo $method->join(); ?>);
         }
-<?php endforeach; ?>
+<?php } ?>
     }
-<?php endforeach; ?>
+<?php } ?>
 }
-<?php endforeach; ?>
+<?php } ?>
