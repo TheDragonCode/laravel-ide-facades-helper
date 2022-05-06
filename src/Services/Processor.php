@@ -19,7 +19,7 @@ class Processor extends BaseService
     {
         foreach ($items as $item) {
             $this->addItem(
-                    Instance::make($item)
+                Instance::make($item)
             );
         }
 
@@ -32,8 +32,8 @@ class Processor extends BaseService
     public function store()
     {
         file_put_contents(
-                $this->storePath(),
-                $this->view('laravel-ide-facades-helper::facades', $this->items)
+            $this->storePath(),
+            $this->view('laravel-ide-facades-helper::facades', $this->items)
         );
     }
 
@@ -62,7 +62,7 @@ class Processor extends BaseService
     protected function storePath(): string
     {
         return $this->app()->basePath(
-                $this->filename()
+            $this->filename()
         );
     }
 

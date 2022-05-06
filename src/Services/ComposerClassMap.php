@@ -34,8 +34,8 @@ class ComposerClassMap extends BaseService
     protected function listClassesInPsrMaps(): array
     {
         $prefixes = array_merge(
-                $this->composer->getPrefixes(),
-                $this->composer->getPrefixesPsr4()
+            $this->composer->getPrefixes(),
+            $this->composer->getPrefixesPsr4()
         );
 
         $classes = [];

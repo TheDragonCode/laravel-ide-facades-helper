@@ -102,7 +102,7 @@ class Method
     protected function getDocBlock(ReflectionMethod $method): DocBlock
     {
         return DocBlock::make(
-                $method->getDocComment() ?: null
+            $method->getDocComment() ?: null
         );
     }
 }

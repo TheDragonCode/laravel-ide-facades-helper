@@ -15,7 +15,7 @@ class DocBlock
     public function __construct(?string $docblock = null)
     {
         $this->doc = $this->factory()->create(
-                $docblock ?: '/** */'
+            $docblock ?: '/** */'
         );
     }
 

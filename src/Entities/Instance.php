@@ -62,7 +62,7 @@ class Instance
     protected function getFilteredMethods(): array
     {
         $methods = $this->reflect()->getMethods(
-                $this->methodsVisibility()
+            $this->methodsVisibility()
         );
 
         return array_values(array_filter($methods, function ($method) {

@@ -36,8 +36,8 @@ class ServiceProvider extends BaseServiceProvider
     protected function bootViews(): void
     {
         $this->loadViewsFrom(
-                __DIR__ . '/../resources/views',
-                'laravel-ide-facades-helper'
+            __DIR__ . '/../resources/views',
+            'laravel-ide-facades-helper'
         );
     }
 

@@ -47,7 +47,7 @@ class Parameter
     public function getValue(): string
     {
         return $this->castParameterValue(
-                $this->getDefaultValue()
+            $this->getDefaultValue()
         );
     }
 
