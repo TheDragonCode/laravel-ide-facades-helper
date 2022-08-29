@@ -31,7 +31,8 @@ class Method
             $type = $return_type instanceof ReflectionNamedType
                     ? $return_type->getName()
                     : (string) $return_type;
-        } else {
+        }
+        else {
             $type = $this->doc->getReturnType();
         }
 
